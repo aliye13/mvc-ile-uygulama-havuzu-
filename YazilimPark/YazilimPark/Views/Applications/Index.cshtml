@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<YazilimPark.Models.Applications>
+
+@{
+    ViewBag.Title = "Uygulama Havuzu";
+}
+
+@Html.Partial("Projects");
+
+
+<div class="homepage">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-6">
+                <a asp-controller="@item.applicationController" asp-action="@item.applicationAction"><img src="~/Images/@Html.DisplayFor(modelItem => item.image)" style="border: 5px solid #000000; border-radius: 30px;" alt="Resim Yüklenemedi" width="95%" /></a>
+                    <br>
+                    <br>
+            </div>
+         }
+    </div>
+</div>
